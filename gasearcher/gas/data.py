@@ -153,7 +153,7 @@ class LoaderDatabase:
         first_show = [random.randint(1, size_dataset - 1) for _ in range(SHOWING)]
 
         if USING_SOM:
-            first_show = np.zeros(4 * IMAGES_ON_LINE)
+            first_show = [0 for _ in range(4 * IMAGES_ON_LINE)]
             # get first window - SOM of labels
             input_data = np.array(list(class_data.values()))
             som = SOM(m=4, n=IMAGES_ON_LINE, dim=len(input_data[0]))
@@ -168,6 +168,7 @@ class LoaderDatabase:
 
             for i in range(len(first_show)):
                 if first_show[i] == -1 and len((set(first_show) & set(targets)) - {-1}) < size_dataset:
+                    print("here")
                     next_id = random.randint(1, size_dataset - 1)
                     while next_id in first_show:
                         next_id = random.randint(1, size_dataset - 1)

@@ -66,7 +66,7 @@ def search(request):
             data = searcher.temporal_search(request.GET['query'], request.session['session_id'], found)
         else:
             data = searcher.text_search(request.GET['query'], request.session['session_id'], found,
-                                    request.COOKIES.get('activity')[:-1])
+                                        request.COOKIES.get('activity')[:-1])
     else:
         # reset save search if user use any other method than text search
         searcher.reset_last(request.session['session_id'])

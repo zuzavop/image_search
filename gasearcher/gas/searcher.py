@@ -126,7 +126,7 @@ class Searcher:
             self.last_search[session] = scores
 
         new_return = list(
-            [a for i in scores[:self.showing] for a in [i - 2, i - 1, i, i + 1, i + 2, i + 3, i + 4, i + 5]])
+            [a for i in scores[:self.showing] for a in [i - 1, i, i + 1, i + 2, i + 3]])
 
         return new_return[:self.showing]
 
