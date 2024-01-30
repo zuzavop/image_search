@@ -82,7 +82,7 @@ const createMainWindow = {
         const div = document.createElement('td');
         div.className = 'img-div';
         document.getElementById(Math.floor(num / config.photosOnLine) + 'tr').appendChild(div);
-        const image = utils.createImage(id, id.toString());
+        const image = utils.createImage(id, id.toString(), true);
         div.appendChild(image);
         image.addEventListener("click", function (e) {
             if (e.ctrlKey) {
@@ -183,7 +183,7 @@ const createMainWindow = {
         // create image of currently search image
         const div = document.createElement("div");
         div.className = "find-img-div";
-        const img = utils.createImage(fin, fin.toString() + 'r', "find-img");
+        const img = utils.createImage(fin, fin.toString() + 'r', false, "find-img");
         div.appendChild(img);
 
         // create button for skipping currently searching image

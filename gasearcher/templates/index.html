@@ -84,9 +84,16 @@
     {# load photos with classes #}
     {% if list_photo %}
         let num = 0;
-        {% for i,v in list_photo.items %}
+        let photo_classes = {};
+        {% for i,v in list_photo.items %}{
+            photo_classes['{{ i }}'] = {{ v }};
+        }
+        {% endfor %}
+        {% for i in photos %}
             {
-                createMainWindow.createImageBlock('{{i}}', {{v}}, num);
+
+                createMainWindow.createImageBlock('{{i}}', photo_classes['{{ i }}'], num);
+                console.log()
                 ++num;
             }
         {% endfor %}

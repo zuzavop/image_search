@@ -1,9 +1,9 @@
 const mainWindow = {
     /**
-     * @type {number}
+     * @type {string}
      * @description index of currently selected
      */
-    selectedId: -1,
+    selectedId: "-1",
     /**
      * @type {number}
      * @description index of middle image in context
@@ -74,7 +74,7 @@ const mainWindow = {
      */
     simSearch: function () {
         // send query for similarity search
-        if (mainWindow.selectedId !== -1) {
+        if (mainWindow.selectedId !== "-1") {
             if (mainWindow.trying === config.att) {
                 utils.setCookies(mainWindow.found + 1, 0, "", "");
                 location.href = '?s';
@@ -85,7 +85,7 @@ const mainWindow = {
                     }
                 }
                 utils.setCookies(mainWindow.found, mainWindow.trying + 1, "");
-                location.href = '?sim_id=' + mainWindow.selectedId;
+                location.href = '?sim_id=' + mainWindow.selectedId.split("_")[0];
             }
         } else {
             alert(text.similarity_warning);
@@ -113,7 +113,7 @@ const mainWindow = {
         for (let i of config.contextIds) {
             newId = id + i
             if (newId > 0 && newId < config.sizeDataset) {
-                const image = utils.createImage(newId, "w" + (newId).toString());
+                const image = utils.createImage(newId, "w" + (newId).toString(), false);
                 image.addEventListener("click", function (e) {
                     if (e.ctrlKey) {
                         if (id === parseInt(image.id.slice(1))) mainWindow.controlAndSend(image.id.slice(1));
@@ -134,7 +134,7 @@ const mainWindow = {
      */
     select: function (id, newContext = true) {
         // select image and show it context
-        if (mainWindow.selectedId !== -1) {
+        if (mainWindow.selectedId !== "-1") {
             document.getElementById(mainWindow.selectedId.toString()).setAttribute("class", "unselected");
         }
 
@@ -143,7 +143,7 @@ const mainWindow = {
             return;
         }
 
-        if (newContext && mainWindow.selectedId === parseInt(id)) {
+        if (newContext && mainWindow.selectedId === id) {
             let parent = document.querySelector(".modal-parent");
             if (parent) {
                 parent.style.display = "block";
@@ -153,10 +153,10 @@ const mainWindow = {
                 document.getElementsByClassName('previous')[0].style.visibility = 'visible';
                 document.getElementsByClassName('next')[0].style.visibility = 'visible';
             }
-            mainWindow.showContext(parseInt(id));
+            mainWindow.showContext(parseInt(id.split("_")[0]));
         }
 
-        mainWindow.selectedId = parseInt(id);
+        mainWindow.selectedId = id;
         document.getElementById(id).setAttribute("class", "selected");
     },
 
@@ -238,7 +238,7 @@ const mainWindow = {
      * send query for bayes update
      */
     bayes : function () {
-        if (mainWindow.selectedId !== -1) {
+        if (mainWindow.selectedId !== "-1") {
             if (mainWindow.trying === config.att) {
                 utils.setCookies(mainWindow.found + 1, 0, "", "");
                 location.href = '?s';
@@ -249,7 +249,7 @@ const mainWindow = {
                     }
                 }
                 utils.setCookies(mainWindow.found, mainWindow.trying + 1, "");
-                location.href = '?b_id=' + mainWindow.selectedId;
+                location.href = '?b_id=' + mainWindow.selectedId.split("_")[0];
             }
         } else {
             alert(text.similarity_warning);

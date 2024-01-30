@@ -3,25 +3,25 @@ const config = {
      * @type {number}
      * @description number of trying before next search image
      */
-    att: 10,
+    att: 20,
 
     /**
      * @type {number}
      * @description number of lines in result table
      */
-    lines: 25,
+    lines: 60,
 
     /**
      * @type {number}
      * @description number of images in results
      */
-    showingPhotos: 200,
+    showingPhotos: 300,
 
     /**
      * @type {number}
      * @description number of classes shown under each image
      */
-    displayed_classes: 2,
+    displayed_classes: 3,
 
     /**
      * @type {boolean}
@@ -45,7 +45,7 @@ const config = {
      * @type {number}
      * @description number of images on each line
      */
-    photosOnLine: 8,//12,
+    photosOnLine: 5,//12,
 
     /**
      * @type {number}

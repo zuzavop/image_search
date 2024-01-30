@@ -1,0 +1,512 @@
+acorn barnacle : 0.082
+albacore tune : 0.136
+alfonsino : 0.005
+almaco jack : 0.077
+american horseshoe crab : 0.000
+american lobster : 0.032
+anchovy : 0.000
+angelfish : 0.368
+antarctic krill : 0.635
+antarctic starry skate : 0.172
+antarctic toothfish : 0.086
+argentine shortfin squid : 0.177
+arrow squid : 3.998
+atlantic blue crab : 0.050
+atlantic bluefin tuna : 0.018
+atlantic bonito : 0.354
+atlantic cod : 0.331
+atlantic croaker : 0.009
+atlantic goliath grouper : 2.832
+atlantic menhaden : 0.172
+atlantic salmon : 0.068
+atlantic spadefish : 3.068
+atlantic trumpetfish : 1.103
+atlantic wolffish : 0.200
+ballonfish : 1.135
+banded sea krait : 0.694
+banded wrasse : 3.658
+banded butterflyfish : 2.823
+bank sea bass : 1.661
+barndoor skate : 0.150
+barracouta : 0.204
+basking shark : 0.177
+bass groper : 1.452
+bat ray : 3.272
+baxters lantern dogfish : 1.112
+beluga sturgeon : 0.032
+beluga whale : 0.141
+bigeye cardinalfish : 1.488
+bigeye tuna : 0.172
+black cod : 0.032
+black drum : 0.000
+black flounder : 0.250
+black manta : 0.495
+black marlin : 0.113
+black oreo : 0.113
+black sea bass : 0.912
+black shark : 0.740
+black stingray : 0.463
+blackfin tuna : 0.259
+blacktip shark : 0.840
+blue cod : 2.482
+blue king crab : 0.222
+blue mackerel : 0.817
+blue maomao : 0.118
+blue marlin : 0.095
+blue moki : 0.241
+blue shark : 1.162
+blue spotted ribbontail ray : 0.876
+blue tang : 3.181
+blue warehou : 0.259
+blue whale : 0.590
+bluebanded goby : 1.017
+bluefin tuna : 0.014
+bluefish : 0.000
+bluehead wrasse : 7.066
+blueline tilefish : 1.561
+bluenose : 0.023
+bowhead whale : 0.068
+bottlenose dolphin : 0.327
+brill : 0.000
+broad squid : 1.370
+broadbill swordfish : 0.127
+broadclub cuttlefish : 1.638
+broadnose sevengill shark : 0.640
+brown bullhead catfish : 0.064
+brown stargazer : 0.000
+brown trout : 0.186
+bronzewhaler shark : 1.584
+bull shark : 1.334
+butterfish : 1.366
+butterfly perch : 2.106
+california grunion : 0.118
+cancer crab : 0.154
+cardinal fish : 0.141
+caribbean reef octopus : 2.786
+caribbean spiny lobster : 0.427
+chambered nautilus : 0.254
+chilean common hake : 0.041
+chilean jack mackerel : 0.304
+chinook salmon : 0.436
+clam : 0.118
+clownfish : 0.790
+clown triggerfish : 1.960
+cobia : 0.050
+cockle : 0.009
+coconut octopus : 0.495
+coelacanth : 0.041
+colorful hermit crab : 0.113
+common limpet : 0.136
+conch : 0.054
+conger eel : 3.903
+cookiecutter shark : 2.805
+cownose ray : 0.808
+decorator crab : 1.684
+deep sea anglerfish : 3.068
+dog cockle : 0.027
+doplhinfish : 0.000
+dredge oyster : 3.358
+dugong : 1.026
+dumbo octopus : 0.454
+eagle ray : 1.992
+elephant fish : 0.300
+escolar : 0.014
+fan shell : 0.077
+false killer whale : 0.363
+fangtooth : 0.068
+fin whale : 0.322
+flamboyant cuttlefish : 0.172
+flamingo tongue : 0.086
+flashlight fish : 2.904
+flatback turtle : 2.047
+florida pompano : 0.154
+flounder : 0.141
+french angelfish : 0.218
+freshwater crayfish : 0.059
+frilled shark : 0.753
+frostfish : 0.513
+gag grouper : 4.720
+garfish : 0.064
+gemfish : 0.136
+geoduck : 0.027
+ghost shark : 5.986
+giant boarfish : 19.223
+giant devilray : 20.476
+giant manta ray : 4.742
+giant pacific octopus : 2.582
+giant spider crab : 0.899
+giant triton : 0.867
+gilthead sea bream : 0.050
+goblin shark : 0.227
+golden prawn : 0.005
+gray triggerfish : 2.106
+grat barracuda : 0.263
+great barracuda : 0.717
+great hammerhead shark : 1.057
+great white shark : 0.177
+greater amberjack : 0.517
+green moray eel : 3.163
+green turtle : 1.951
+greenback flounder : 0.349
+greenland shark : 0.567
+grenadier : 0.000
+grey mullet : 0.018
+grey shark : 0.445
+grey spiny dogfish : 0.177
+guineafowl puffer : 0.395
+hagfish : 0.150
+hake : 0.005
+hammerhead shark : 1.557
+hapuku : 0.032
+hawaiian bobtail squid : 0.499
+hawksbill turtle : 2.060
+hoki : 0.000
+hourglass dolphin : 0.086
+humboldt squid : 1.488
+inanga : 0.000
+inshore lizardfish : 0.762
+jack mackerel : 0.091
+jack-knife prawn : 0.059
+javelin fish : 2.233
+jellyfish : 0.576
+john dory : 0.227
+kahawai : 0.077
+kelpfish : 4.157
+kemps ridley turtle : 1.779
+king tarakihi : 0.000
+king crab : 0.118
+kingfishes : 0.145
+knobbed porgy : 0.054
+knobbed whelk : 0.481
+koheru : 0.005
+lamprey : 0.054
+leafy seadragon : 0.005
+leatherback turtle : 0.967
+leatherjacket : 0.113
+lemon shark : 0.722
+lemon sole : 0.005
+limpet : 0.009
+ling : 0.000
+little tunny : 0.000
+lobster krill : 0.104
+loggerhead turtle : 1.897
+longfin eel : 1.466
+longfin mako shark : 0.109
+longfinned boarfish : 3.553
+longnose sawshark : 0.209
+longnosed chimaera : 0.994
+longsnout seahorse : 0.054
+lookdown dory : 5.196
+lucifer dogfish : 0.422
+mako shark : 0.213
+mantis shrimp : 0.227
+maori chief : 0.000
+marbled electric ray : 0.785
+marblefish : 1.811
+megamouth shark : 0.349
+mexican lookdown : 3.667
+mirror dory : 0.281
+monkfish : 0.517
+moonfish : 0.168
+moorish idol : 1.484
+mussel : 0.318
+narwhal : 0.200
+nassau grouper : 13.600
+northern puffer : 0.377
+northern red snapper : 0.091
+northern tuna : 0.054
+nurse shark : 4.116
+oarfish : 0.345
+ocean sunfish : 0.454
+oceanic whitetip shark : 1.003
+octopus : 0.744
+oilfish : 0.000
+olive ridley turtle : 1.085
+olive sea snake : 1.293
+orange perch : 0.154
+orange roughy : 0.663
+orca : 0.867
+otter clam : 0.213
+oyster toadfish : 0.200
+packhorse rock lobster : 2.083
+pacific angel shark : 2.038
+pacific blackdragon : 0.771
+pacific bluefin tuna : 0.045
+pacific halibut : 0.077
+pacific herring : 0.622
+pacific sardine : 0.626
+paddle crab : 0.631
+pantropical spotted dolphin : 0.209
+parore : 0.000
+parrotfish : 4.824
+patagonian toothfish : 0.005
+paua : 0.363
+peacock mantis shrimp : 0.399
+pelagic thresher shark : 0.971
+peruvian anchoveta : 0.186
+pigfish : 0.059
+pilchard : 0.000
+pinfish : 0.005
+pink maomao : 0.014
+pink salmon : 0.041
+pipi : 0.005
+porae : 0.005
+porbeagle shark : 0.005
+porcupine fish : 0.921
+porcupine ray : 3.240
+portuguese dogfish : 0.095
+prawn killer : 0.005
+prickly dogfish : 1.135
+prickly shark : 0.903
+pygmy seahorse : 0.109
+queen angelfish : 0.567
+queen conch : 0.023
+queen parrotfish : 1.811
+quinnat salmon : 0.032
+red baitfish : 0.313
+red cod : 1.207
+red drum : 0.000
+red grouper : 17.612
+red gurnard : 0.032
+red king crab : 0.186
+red lionfish : 0.349
+red moki : 0.036
+red mullet : 0.009
+red porgy : 0.059
+red rock crab : 2.532
+red snapper : 0.027
+red swimming crab : 1.625
+ribaldo : 0.000
+rig : 0.000
+rock cod : 6.453
+roughy : 0.068
+royal red prawn : 0.064
+ruby fish : 0.186
+rudderfish : 8.836
+sailfish : 0.159
+sand flounder : 1.389
+sand tiger shark : 0.622
+sarcastic fringehead : 0.272
+saury : 0.000
+scallop : 0.313
+scalloped hammerhead shark : 1.148
+scampi : 0.000
+scarlet frogfish : 0.200
+scarlet wrasse : 0.218
+scarpee : 0.000
+scorpionfish : 0.699
+sea anemone : 1.203
+sea cucumber : 3.059
+sea dragon : 0.200
+sea horse : 0.095
+sea lion : 0.227
+sea perch : 7.565
+sea star : 1.820
+sea turtle : 2.056
+sea urchin : 0.390
+seal : 0.118
+searobin : 8.659
+shad : 0.000
+sheepshead : 0.154
+short beaked common dolphin : 0.104
+shortfin eel : 2.056
+shortfin mako shark : 0.163
+shortjawed kokopu : 0.590
+shovelnose guitarfish : 0.563
+shovelnose spiny dogfish : 0.281
+silver dory : 2.142
+silver drummer : 0.005
+silver perch : 0.077
+silver roughy : 1.375
+silver warehou : 0.005
+silverside : 0.000
+skate : 0.000
+skipjack tuna : 0.027
+slender snipe eel : 1.080
+slender tuna : 0.726
+slickhead : 0.014
+smalltooth sawfish : 0.177
+smelt : 0.082
+smooth hammerhead shark : 1.366
+smooth oreo : 0.000
+snapper : 0.594
+sockeye salmon : 0.132
+sole : 0.009
+southern blue-ringed octopus : 0.467
+southern stingray : 0.672
+spanish mackerel : 0.145
+speckled hind : 0.005
+spinner shark : 7.397
+spiny dogfish : 0.268
+splendid perch : 0.023
+sponge : 0.005
+spot : 0.018
+spottail pinfish : 0.767
+spotted eagle ray : 2.115
+spotted gurnard : 1.439
+spotted moray : 2.437
+spotted porcupinefish : 4.602
+spotted ratfish : 1.380
+spotted seatrout : 0.499
+spotted smoothhound : 0.250
+spotted stargazer : 0.163
+sprat : 0.000
+stingray : 0.608
+stonefish : 6.626
+stoplight loosejaw : 0.032
+striped bass : 0.086
+striped marlin : 1.048
+striped mullet : 0.377
+striped pyjama squid : 0.599
+swordfish : 0.113
+summer flounder : 0.123
+sunfish : 1.352
+surf clam : 0.177
+tan bristlemouth : 1.184
+tarakihi : 0.000
+tasselled wobbegong : 1.697
+threespot damselfish : 9.049
+tiger prawn : 0.027
+tiger shark : 1.434
+toheroa : 0.286
+tuatua : 0.036
+trevally : 1.747
+tropical two-wing flyingfish : 0.213
+trumpeter : 0.005
+turbot : 0.000
+vampire squid : 0.504
+vaquita : 0.000
+velvet dogfish : 0.145
+vermilion snapper : 0.132
+wahoo : 0.168
+walking shark : 0.667
+weakfish : 0.036
+whale : 1.225
+whale shark : 0.998
+whiptail gulper : 0.095
+white grunt : 0.032
+white marlin : 0.000
+white squid : 0.699
+white shrimp : 0.027
+white warehou : 0.073
+white-ring garden eel : 2.387
+whitebait : 0.050
+whitetip reef shark : 2.741
+witch : 0.209
+wobbegong shark : 4.579
+yellowbelly flounder : 0.522
+yelloweye mullet : 0.644
+yellowedge grouper : 15.711
+yellowfin tuna : 0.005
+yellowfoot paua : 0.381
+yellowtail kingfish : 0.558
+yellowtail snapper : 0.150
+zebra shark : 0.967
+acropora globiceps coral : 0.218
+acropora jacquelineae coral : 0.209
+acropora lokani coral : 1.684
+acropora pharaonis coral : 0.150
+acropora retusa coral : 0.209
+acropora rudis coral : 0.263
+acropora speciosa coral : 0.340
+acropora tenella coral : 0.349
+american oyster : 0.123
+anacropora spinosa coral : 0.349
+bamboo coral : 0.254
+black coral : 4.756
+blue glaucus : 0.127
+bluebottle : 0.159
+boulder star coral : 5.945
+brain coral : 0.182
+branching cauliflower coral : 0.005
+bubble coral : 6.957
+cantharellus noumeae coral : 0.054
+carnation coral : 0.014
+chilean basket star : 0.050
+christmas tree worm : 0.018
+clubbed finger coral : 0.694
+cockscomb cup coral : 7.873
+crown-of-thorns starfish : 0.359
+cushion star : 0.617
+devils hand coral : 5.582
+eccentric sand dollar : 0.059
+elkhorn coral : 1.702
+euphyllia paradivisa coral : 0.009
+felimare cantabrica : 0.313
+flameback : 0.127
+fried egg jellyfish : 0.300
+giant barrel sponge : 7.438
+giant caribbean sea anemone : 3.590
+giant carpet anemone : 0.685
+giant clam : 13.274
+giant kelp : 4.352
+giant pytosome : 0.277
+great star coral : 0.372
+grooved brain coral : 3.326
+honeycomb coral : 1.892
+hood coral : 46.678
+isopora crateriformis coral : 0.254
+ivory bush coral : 16.931
+leaf coral : 0.653
+leather coral : 5.972
+lettuce coral : 12.452
+lions mane jellyfish : 0.290
+lobe coral : 11.540
+lobed star coral : 0.858
+lophelia coral : 3.036
+massive starlet coral : 19.863
+montipora australiensis coral : 0.522
+moon jelly : 0.935
+mountainous star coral : 1.175
+mustard hill coral : 54.207
+organ pipe coral : 27.047
+pacific purple sea urchin : 0.531
+pavona diffluens coral : 26.892
+pillar coral : 26.901
+pocillopora meandrina coral : 0.277
+porites napopora coral : 1.044
+portuguese man owar : 0.499
+red rice coral : 2.628
+rose coral : 23.861
+rough cactus coral : 0.073
+sea fan : 1.166
+sea wasp : 0.331
+seriatopora aculeata coral : 3.998
+smooth mounding coral : 61.858
+snowflake coral : 0.032
+spanish dancer : 0.009
+stanghorn coral : 27.746
+stinging hydroid : 0.200
+stylasteridae : 0.000
+tubastraea floreana coral : 10.424
+venus sea fan coral : 0.381
+whip coral : 5.795
+yellow cup black coral : 0.136
+yellow tube sponge : 5.636
+algea : 0.209
+buoy : 0.054
+bubbles : 0.168
+diver : 25.935
+gulfweed : 0.186
+kelp : 3.907
+seagrass : 0.631
+coral snake : 0.000
+small rock : 0.073
+big rock : 0.027
+rust : 1.139
+rot : 0.104
+lamp : 0.100
+shipwreck : 13.619
+cave : 0.871
+trench : 0.331
+trough : 0.036
+island : 0.082
+ridge : 0.027
+gap : 0.045
+seamount : 3.463
+plateau : 0.041
+tentacle : 0.467
+submarine : 7.710
+deep hydrothermal vent : 16.528
+seagrass bed : 2.387
+kelp forest : 13.718

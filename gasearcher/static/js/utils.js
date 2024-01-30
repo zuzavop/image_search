@@ -47,12 +47,22 @@ const utils = {
      * create image with given parameters
      * @param {number} id - id of the image (index in dataset)
      * @param {string} idName - id name of the image
+     * @param {boolean} isNew - if is in new added image
      * @param {string} [className] - class name of the image
      * @returns {HTMLImageElement} - the image element
      */
-    createImage: function (id, idName, className) {
+    createImage: function (id, idName, isNew, className) {
         const img = document.createElement("img");
-        img.id = idName;
+        if (isNew) {
+            let count = 0;
+            while (document.getElementById(idName + "_" + count)) {
+                count++;
+            }
+            img.id = idName + "_" + count;
+        } else {
+            img.id = idName;
+        }
+        console.log(img.id);
         img.src = config.photosAddress + ("0000" + (id + 1)).slice(-5) + '.jpg';
         if (className) img.className = className;
         return img;

@@ -31,6 +31,7 @@ def prepare_data(request, data, find):
                    word_count > 5]
 
     sending_data = {
+        'photos': data,
         'list_photo': data_to_display,
         'percent': class_pr,
         'classes': ','.join(classes),
@@ -61,13 +62,20 @@ def search(request):
     data = first_show if USING_SOM else np.arange(1, SHOWING + 1)
 
     if request.GET.get('query'):
-        data = searcher.text_search(request.GET['query'], request.session['session_id'], found,
+        if ">" in request.GET['query']:
+            data = searcher.temporal_search(request.GET['query'], request.session['session_id'], found)
+        else:
+            data = searcher.text_search(request.GET['query'], request.session['session_id'], found,
                                     request.COOKIES.get('activity')[:-1])
     else:
         # reset save search if user use any other method than text search
         searcher.reset_last(request.session['session_id'])
-        if request.GET.get('id'):
-            data = searcher.image_search(request.GET['id'], found, request.session['session_id'])
+        if request.GET.get('sim_id'):
+            data = searcher.image_search(request.GET['sim_id'], found, request.session['session_id'])
+        if request.GET.get('b_id'):
+            data = searcher.bayes_update(request.GET['b_id'], request.session['session_id'])
+
+    searcher.last_sent[request.session['session_id']] = data
 
     return prepare_data(request, data, targets[found])
 

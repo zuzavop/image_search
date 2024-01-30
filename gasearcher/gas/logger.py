@@ -56,6 +56,21 @@ class Logger:
             log.write(f'{str(query_id)};{str(self.targets[target])};{session};' + str(
                 self.get_rank(new_result, self.targets[target])) + ';""\n')
 
+    def log_bayes_update(self, query_id, new_result, target, session):
+        """
+        Logs bayes update.
+
+        Args:
+            query_id (int): The query image ID.
+            new_result (list): A list of indices of images sorted (in order) after bayes update.
+            target (int): The order of the currently searching image in targets.
+            session (str): The unique session ID of the user.
+        """
+        # write down log
+        with open(self.path_log_similarity, "a") as log:
+            log.write(f'{str(query_id)};{str(self.targets[target])};{session};' + str(
+                self.get_rank(new_result, self.targets[target])) + ';""\n')
+
     @staticmethod
     def get_rank(result, index):
         """

@@ -106,7 +106,7 @@ button:hover {
 
 .img-div {
     float: left;
-    width: 12.5%;
+    width: 20%;
     height: auto;
     position: relative;
     margin: 0 0 calc(15vh - 4.5vw) 0;

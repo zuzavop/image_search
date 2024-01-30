@@ -8,7 +8,7 @@ import torch as torch
 from sklearn_som.som import SOM
 
 from gas.settings import PATH_CLIP, PATH_NOUNLIST, PATH_CLASSES, PATH_SELECTION, PATH_ENDS, IMAGES_ON_LINE, \
-    LINES, NUMBER_OF_SEARCHED
+    LINES, NUMBER_OF_SEARCHED, USING_SOM, SHOWING
 
 
 class LoaderDatabase:
@@ -34,8 +34,8 @@ class LoaderDatabase:
         self.path_clip = path_data + ("sea_clip" if is_sea_database else PATH_CLIP)
         self.path_nounlist = path_data + ("sea_nounlist.txt" if is_sea_database else PATH_NOUNLIST)
         self.path_classes = path_data + ("sea_result.csv" if is_sea_database else PATH_CLASSES)
-        self.path_selection = path_data + ("sea_selection.txt" if is_sea_database else PATH_SELECTION)
-        self.path_ends = path_data + ("sea_videos.txt" if is_sea_database else PATH_ENDS)
+        self.path_selection = path_data + ("" if is_sea_database else PATH_SELECTION)
+        self.path_ends = path_data + ("videos.txt" if is_sea_database else PATH_ENDS)
         self.is_sea_database = is_sea_database
         self.path_data = path_data
 
@@ -124,12 +124,12 @@ class LoaderDatabase:
             list: A list of indexes of images that should be found.
         """
         # images that should be found
-        if self.is_sea_database:
+        if PATH_SELECTION != "":
             with open(self.path_selection, 'r') as file:
                 sea_finding = [int(num) for num in file.readline().split(',')]
             random.shuffle(sea_finding)
 
-        targets = sea_finding[:20] if self.is_sea_database else []
+        targets = sea_finding[:20] if PATH_SELECTION != "" else []
         for i in range(NUMBER_OF_SEARCHED):
             new_int = random.randint(1, size_dataset)
             if new_int not in targets:
@@ -150,24 +150,27 @@ class LoaderDatabase:
         Returns:
             list: A list of indexes of images representing the first window.
         """
-        # get first window - SOM of labels
-        first_show = [0 for _ in range(IMAGES_ON_LINE * LINES)]
-        input_data = np.array(list(class_data.values()))
-        som = SOM(m=LINES, n=IMAGES_ON_LINE, dim=len(input_data[0]))
+        first_show = [random.randint(1, size_dataset - 1) for _ in range(SHOWING)]
 
-        prediction = som.fit_predict(input_data)
+        if USING_SOM:
+            first_show = np.zeros(4 * IMAGES_ON_LINE)
+            # get first window - SOM of labels
+            input_data = np.array(list(class_data.values()))
+            som = SOM(m=4, n=IMAGES_ON_LINE, dim=len(input_data[0]))
 
-        for i in range(len(first_show)):
-            if i in prediction:
-                first_show[i] = np.random.choice(np.where(prediction == i)[0])
-            else:
-                first_show[i] = -1
+            prediction = som.fit_predict(input_data)
 
-        for i in range(len(first_show)):
-            if first_show[i] == -1 and len((set(first_show) & set(targets)) - {-1}) < size_dataset:
-                next_id = random.randint(1, size_dataset - 1)
-                while next_id in first_show:
+            for i in range(len(first_show)):
+                if i in prediction:
+                    first_show[i] = np.random.choice(np.where(prediction == i)[0])
+                else:
+                    first_show[i] = -1
+
+            for i in range(len(first_show)):
+                if first_show[i] == -1 and len((set(first_show) & set(targets)) - {-1}) < size_dataset:
                     next_id = random.randint(1, size_dataset - 1)
-                first_show[i] = next_id
+                    while next_id in first_show:
+                        next_id = random.randint(1, size_dataset - 1)
+                    first_show[i] = next_id
 
         return first_show
