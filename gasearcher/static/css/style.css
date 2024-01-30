@@ -1,0 +1,159 @@
+html {
+    font-size: 100%;
+    padding: 2%;
+}
+
+.split {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    margin: 5px;
+}
+
+.left {
+    left: 0;
+    width: 20%;
+}
+
+.right {
+    right: 0;
+    width: 80%;
+    padding-top: 2%;
+}
+
+.sidebar {
+    text-align: center;
+    margin: 0 2% 0 0;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    float: left;
+    margin: 0 3%;
+}
+
+img {
+    margin: 3px;
+    width: 100%;
+    height: auto;
+}
+
+img.unselected {
+    border-style: hidden;
+}
+
+img.selected {
+    border-style: solid;
+    border-color: yellow;
+}
+
+.find-img-div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-left: 3px;
+    width: 18%;
+}
+
+.sidebar img {
+    border-style: solid;
+    border-color: greenyellow;
+    border-radius: 8px;
+}
+
+.context img {
+    width: 8%;
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2% 5%;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    margin: 1%;
+}
+
+button:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+button:hover {
+    background-color: #f7fafa;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bar-item {
+    margin: 5% 0;
+    border-color: #05b4cd;
+}
+
+.img-div {
+    float: left;
+    width: 12.5%;
+    height: auto;
+    position: relative;
+    margin: 0 0 calc(15vh - 4.5vw) 0;
+}
+
+.img-div div {
+    position: absolute;
+    float: left;
+    font-size: 50%;
+    left: 5%;
+    z-index: 1;
+    bottom: calc(-15vh + 4.5vw);
+}
+
+.image-buttons .hidden {
+    display: none;
+}
+
+.image-buttons {
+    display: block;
+}
+
+.plus-but {
+    border-radius: 12px;
+}
+
+#search-text {
+    width: 90%;
+    margin: 5% 5%;
+}
+
+#help-button {
+    position:absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5% 1%;
+    margin: 0;
+}
+
+#next-button {
+    width: 100%;
+}
+
+#warning {
+    background-color: yellow;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2%;
+}

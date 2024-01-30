@@ -1,0 +1,75 @@
+.modal-parent{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.popup-window{
+  background: white;
+  width: 90%;
+  padding: 2% 2%;
+  border-radius: 9px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  top: 30%;
+  left: 5%;
+  position: relative;
+}
+
+.close-button{
+  position: absolute;
+  left: 97%;
+  top: 0;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.context {
+    position: relative;
+    bottom: 0;
+    margin: 0 0 0 5%;
+}
+
+.cont-butt {
+    position: absolute;
+    height: 85%;
+    bottom: 5%;
+    visibility: hidden;
+    padding: 3% 1% 3% 1%;
+}
+
+.next {
+    right: 4%;
+}
+
+.previous {
+    left: 2%;
+}
+
+.context img {
+  width: 18%;
+}
+
+.help-parent{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.help-window{
+  background: white;
+  width: 80%;
+  padding: 2% 2%;
+  border-radius: 9px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  left: 10%;
+  position: relative;
+}

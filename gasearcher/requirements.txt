@@ -1,0 +1,12 @@
+clip @ git+https://github.com/openai/CLIP.git@40f5484c1c74edd83cb9cf687c6ab92b28d8b656
+Django==4.1
+django_debug_toolbar==3.5.0
+ftfy==6.1.1
+numpy==1.22.3
+pandas==1.4.2
+regex==2022.3.2
+sklearn_som==1.1.0
+tqdm==4.63.0
+torch
+torchaudio
+torchvision

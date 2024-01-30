@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>src.evaluator API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>src.evaluator</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import csv
+import os
+
+import clip
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import torch
+from matplotlib import ticker
+
+
+class Evaluator:
+    &#34;&#34;&#34;
+    A class for evaluating models and visualizing results.
+
+    Attributes:
+        device (str): The device on which the model is loaded.
+        model: The loaded model.
+        preprocess: The preprocessing function of the loaded model.
+        clip_data (list): A list of data extracted from images.
+        same_video (dict): A dictionary mapping video names to their surrounding.
+        last_search (dict): A dictionary mapping sessions to their last searched query.
+        multi_search (dict): A dictionary mapping sessions to their last searched queries for multi model.
+        min_search (dict): A dictionary mapping sessions to their last search query for min model.
+    &#34;&#34;&#34;
+
+    def __init__(self, result_path, clip_path, showing=60, has_sur=True, surrounding=7,
+                 sur_path=&#34;videos_end.txt&#34;):
+        &#34;&#34;&#34;
+        Initializes the Evaluator object.
+
+        Args:
+            result_path (str): Path to the directory where the results will be stored.
+            clip_path (str): Path to the directory where the clip data will be loaded from.
+            showing (int): The number of images to be shown in the result.
+            has_sur (bool): Whether to use surrounding of images.
+            surrounding (int): How much surrounding images to use.
+            sur_path (str): Path to the file which define ends of each video.
+        &#34;&#34;&#34;
+        self.device = &#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;
+        self.model, self.preprocess = clip.load(&#34;ViT-B/32&#34;, device=self.device)
+        self.result_path = result_path
+        self.showing = showing
+        self.sur = surrounding
+
+        self.clip_data = []
+        self.same_video = {}
+        self.last_search = {}
+        self.multi_search = {}
+        self.min_search = {}
+
+        for fn in sorted(os.listdir(clip_path)):
+            self.clip_data.append(torch.load(clip_path + f&#34;/{fn}&#34;))
+
+        if has_sur:
+            bottom = 0
+            with open(sur_path, &#39;r&#39;) as f:
+                for line in f:
+                    top = int(line[:-1]) - 1
+                    self.same_video.update(
+                        {i: np.arange(max(bottom, i - self.sur), min(top, i + self.sur)) for i in range(bottom, top)})
+                    bottom = top
+        else:
+            for i in range(len(self.clip_data)):
+                self.same_video[i] = [i]
+
+        self.logger = Logger(showing, self.same_video, self.result_path)
+
+    def evaluate_data(self, log_path, reform_count=2, with_som=False, is_sea=False):
+        &#34;&#34;&#34;
+        Evaluates the data from given log for each model define in project.
+
+        Args:
+            log_path (str): Path to the log file.
+            reform_count (int): How many times the text query can be reformulated.
+            with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            is_sea (bool): Whether the sea dataset is used.
+        &#34;&#34;&#34;
+        query_count = 0
+
+        with open(log_path) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=&#39;;&#39;)
+            line = 0
+            prev_id = -1
+            prev_session = &#34;&#34;
+            count_same = 0
+
+            for row in csv_reader:
+                if line &gt; 0:
+                    ids = int(row[1])
+                    session = row[2]
+                    if prev_id != ids or prev_session != session:
+                        query_count += 1
+                        count_same = 1
+                        self.last_search[session] = np.zeros(len(self.clip_data))
+                        self.min_search[session] = np.full(len(self.clip_data), 2)
+                        self.multi_search[session] = np.ones(len(self.clip_data))
+                    else:
+                        count_same += 1
+
+                    if count_same &lt;= reform_count:
+                        self.get_data_from_text_search(row[0], session, ids, prev_id == ids, with_som, is_sea)
+
+                    prev_id = ids
+                    prev_session = session
+                line += 1
+
+        print(&#34;Total search: &#34;, query_count)
+
+    def get_data_from_text_search(self, query, session, found, is_second, with_som, is_sea):
+        &#34;&#34;&#34;
+        Gets data for a current text search and log search for all models.
+
+        Args:
+            query (str): The text query used for search.
+            session (str): The id of current session.
+            found (int): The id of the image that was currently looking for.
+            is_second (bool): Whether this is the second text query.
+            with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            is_sea (bool): Whether the sea dataset is used.
+        &#34;&#34;&#34;
+        # get features of text query
+        with torch.no_grad():
+            text_features = self.model.encode_text(clip.tokenize([query]).to(self.device))
+        text_features /= np.linalg.norm(text_features)
+
+        # get distance of vectors
+        scores = (np.concatenate([1 - (torch.cat(self.clip_data) @ text_features.T)], axis=None))
+
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea)
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.25)
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.5)
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.75)
+
+        self.last_search[session] = scores
+        self.multi_search[session] = scores
+        self.min_search[session] = scores
+
+    def log_text_search_for_all_models(self, scores, query, session, found, is_second, with_som, is_sea, limit=1.0):
+        &#34;&#34;&#34;
+        Logs the text search for all models.
+
+        Args:
+            scores (numpy.ndarray): The scores of the text search.
+            query (str): The text query used for search.
+            session (str): The id of current session.
+            found (int): The id of the image that was currently looking for.
+            is_second (bool): Whether this is the second text query.
+            with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            is_sea (bool): Whether the sea dataset is used.
+            limit (float): The percentage limit for dataset after first query.
+        &#34;&#34;&#34;
+        indexes = np.arange(len(self.clip_data))
+
+        if is_second:
+            indexes = np.argsort(self.last_search[session])[:int(len(self.clip_data) * limit)]
+            scores = scores[indexes]
+
+        self.logger.log_down(self.get_log_name(&#34;basic&#34;, with_som, is_sea, limit), list(np.argsort(scores)), indexes,
+                             query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;min&#34;, with_som, is_sea, limit),
+                             list(np.argsort(np.min(np.array([scores, self.min_search[session]]), axis=0))), indexes,
+                             query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;max&#34;, with_som, is_sea, limit),
+                             list(np.argsort(np.max(np.array([scores, self.last_search[session]]), axis=0))), indexes,
+                             query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;sum&#34;, with_som, is_sea, limit),
+                             list(np.argsort(scores + self.last_search[session])), indexes, query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;multi&#34;, with_som, is_sea, limit),
+                             list(np.argsort(scores * self.multi_search[session])), indexes, query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;avg&#34;, with_som, is_sea, limit),
+                             list(np.argsort((2 * scores) + self.last_search[session])), indexes, query, session, found)
+
+    @staticmethod
+    def get_log_name(name, is_som, is_sea, limit=1.0):
+        &#34;&#34;&#34;
+        Gets the name for the log.
+
+        Args:
+            name (str): The name of the model.
+            is_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            limit (float): The percentage limit for dataset after first query.
+            is_sea (bool): Whether the sea dataset is used.
+
+        Returns:
+            str: The name for the log.
+        &#34;&#34;&#34;
+        if is_sea:
+            name = &#34;sea_&#34; + name
+        if is_som:
+            name += &#34;_som&#34;
+        if limit &lt; 1.0:
+            name += &#34;_limit_&#34; + str(25 if limit == 0.25 else (50 if limit == 0.5 else 75))
+        return name + &#34;.csv&#34;
+
+    @staticmethod
+    def get_data_from_log(log_path):
+        &#34;&#34;&#34;
+        Method to extract data from a log file.
+
+        Args:
+            log_path (str): Path to the log file.
+
+        Returns:
+            A list containing the ranks for second query, ranks for first query, and difference values
+            extracted from the log file.
+        &#34;&#34;&#34;
+        ranks1 = []
+        ranks2 = []
+        with open(log_path) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=&#39;;&#39;)
+            line = 0
+
+            previous_row = {}
+
+            for row in csv_reader:
+                if line &gt; 0 and row[1] == previous_row[1] and row[2] == previous_row[2]:
+                    ranks1.append(int(previous_row[3]))
+                    ranks2.append(int(row[3]) if int(row[3]) &gt; 0 else 22036)
+
+                previous_row = row
+                line += 1
+
+        return [ranks2, ranks1]
+
+    def get_data_for_graph(self, input_path, first_col_name):
+        &#34;&#34;&#34;
+        Extracts data from multiple log files to be used for generating a plot.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            first_col_name (str): Name of the first column in the generated plot.
+
+        Returns:
+            A tuple containing the data and column names to be used in generating the plot.
+        &#34;&#34;&#34;
+        data = []
+        columns = [first_col_name]
+
+        x = 0
+        for fn in sorted(os.listdir(input_path)):
+            if x == 0:
+                data = [self.get_data_from_log(fn)[1]]
+            data = np.append(data, [self.get_data_from_log(fn)[0]], axis=0)
+            columns.append(fn[:-4])
+            x += 1
+
+        return zip(data, columns)
+
+    def get_violin_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a violin plot of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+
+        if use_log_scale:
+            data = [[np.log10(d) for d in row] for row in data]
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        fig, ax = plt.subplots(figsize=(16, 5))
+        sns.set()
+        sns.violinplot(data=data, bw=.02, ax=ax)
+
+        if use_log_scale:
+            ax.yaxis.set_major_formatter(ticker.StrMethodFormatter(&#34;$10^{{{x:.0f}}}$&#34;))
+            ymin, ymax = ax.get_ylim()
+            tick_range = np.arange(np.floor(ymin), ymax)
+            ax.yaxis.set_ticks(tick_range)
+            ax.yaxis.set_ticks([np.log10(x) for p in tick_range for x in np.linspace(10 ** p, 10 ** (p + 1), 10)],
+                               minor=True)
+            plt.tight_layout()
+
+        plt.savefig(output_file)
+
+    def get_points_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a points plot of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        sns.set()
+        sns.stripplot(data=data)
+        if use_log_scale:
+            plt.yscale(&#39;log&#39;)
+        plt.savefig(output_file)
+
+    def get_boxen_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a boxen plot of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        sns.set()
+        sns.boxenplot(data=data)
+        if use_log_scale:
+            plt.yscale(&#39;log&#39;)
+        plt.savefig(output_file)
+
+    def get_combine_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a combine plot (violin plot combine with swarm plot) of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        sns.set()
+        sns.catplot(data=data, kind=&#34;violin&#34;, color=&#34;.9&#34;, inner=None, cut=0, bw=.02)
+        sns.swarmplot(data=data, size=1.5)
+        if use_log_scale:
+            plt.yscale(&#39;log&#39;)
+        plt.savefig(output_file)
+
+
+class Logger:
+    def __init__(self, showing, same_video, result_path):
+        &#34;&#34;&#34;
+        Initializes a Logger object.
+
+        Args:
+            showing (int): The number of images to be shown in the result.
+            same_video (dict): A dictionary containing the indices surrounding image (surrounding in same video).
+            result_path (str): The directory path where the log files will be saved.
+        &#34;&#34;&#34;
+        self.showing = showing
+        self.same_video = same_video
+        self.result_path = result_path + &#34;\\model_results\\&#34;
+        if not os.path.exists(self.result_path):
+            os.makedirs(self.result_path)
+
+    def log_down(self, log_filename, new_scores, indexes, query, session, found):
+        &#34;&#34;&#34;
+        Writes the result of a query to a log file.
+
+        Args:
+            log_filename (str): The name of the log file.
+            new_scores (list): A list of indices of images sorted by similarity to the current query.
+            indexes (list): A list of indices of all images in the dataset that are currently used.
+            query (str): The text of the query.
+            session (str): The id of the user session.
+            found (int): The index of the image that was currently looking for.
+        &#34;&#34;&#34;
+        with open(self.result_path + log_filename, &#34;a&#34;) as log:
+            # if searching image is present in context (surrounding of image) of any image in shown result same is equal 1
+            same = self.is_in_same_video(indexes[new_scores[:self.showing]], found)
+            first = self.get_rank(new_scores, np.where(indexes == found)[0][0])
+            for i in list(set(indexes).intersection(set(self.same_video[found]))):
+                first = min(first, self.get_rank(new_scores, np.where(indexes == i)[0][0]))
+
+            log.write(f&#39;&#34;{query}&#34;;{found};{session};&#39; + str(self.get_rank(new_scores, np.where(indexes == found)[0][
+                0]) if found in indexes else -1) + &#39;;{same};{first}&#39;)
+
+    def is_in_same_video(self, new_showing, target):
+        &#34;&#34;&#34;
+        Determines if the searched image and its surrounding is present in the shown result.
+
+        Args:
+            new_showing (list): A list of indices of images to be shown in the query result.
+            target (int): The index of the currently searching image.
+
+        Returns:
+            int: If the searched image is present in the context of any image in the shown result, returns 1.
+            Otherwise, returns 0.
+        &#34;&#34;&#34;
+        # if searching image is present in context (surrounding of image) of any image in shown result same is equal 1
+        return 1 if len(list(set(new_showing) &amp; set(self.same_video[target]))) &gt; 0 else 0
+
+    @staticmethod
+    def get_rank(scores, index):
+        &#34;&#34;&#34;
+        Get rank (from 1) of image.
+
+        Args:
+            scores (list): A list of indices of images sorted by similarity to the current query
+            index (int): The index of the image
+
+        Returns:
+            int: The rank of given image
+        &#34;&#34;&#34;
+        return scores.index(index) + 1
+
+
+evaluator = Evaluator(&#34;.//&#34;, &#34;..//gasearcher//static//data//clip&#34;, 60, True, 2,
+                      &#34;..//gasearcher//static//data//videos_end.txt&#34;)
+#evaluator.evaluate_data(&#34;..//gasearcher//static//data//log.csv&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="src.evaluator.Evaluator"><code class="flex name class">
+<span>class <span class="ident">Evaluator</span></span>
+<span>(</span><span>result_path, clip_path, showing=60, has_sur=True, surrounding=7, sur_path='videos_end.txt')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class for evaluating models and visualizing results.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>device</code></strong> :&ensp;<code>str</code></dt>
+<dd>The device on which the model is loaded.</dd>
+<dt><strong><code>model</code></strong></dt>
+<dd>The loaded model.</dd>
+<dt><strong><code>preprocess</code></strong></dt>
+<dd>The preprocessing function of the loaded model.</dd>
+<dt><strong><code>clip_data</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of data extracted from images.</dd>
+<dt><strong><code>same_video</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary mapping video names to their surrounding.</dd>
+<dt><strong><code>last_search</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary mapping sessions to their last searched query.</dd>
+<dt><strong><code>multi_search</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary mapping sessions to their last searched queries for multi model.</dd>
+<dt><strong><code>min_search</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary mapping sessions to their last search query for min model.</dd>
+</dl>
+<p>Initializes the Evaluator object.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>result_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory where the results will be stored.</dd>
+<dt><strong><code>clip_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory where the clip data will be loaded from.</dd>
+<dt><strong><code>showing</code></strong> :&ensp;<code>int</code></dt>
+<dd>The number of images to be shown in the result.</dd>
+<dt><strong><code>has_sur</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to use surrounding of images.</dd>
+<dt><strong><code>surrounding</code></strong> :&ensp;<code>int</code></dt>
+<dd>How much surrounding images to use.</dd>
+<dt><strong><code>sur_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the file which define ends of each video.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Evaluator:
+    &#34;&#34;&#34;
+    A class for evaluating models and visualizing results.
+
+    Attributes:
+        device (str): The device on which the model is loaded.
+        model: The loaded model.
+        preprocess: The preprocessing function of the loaded model.
+        clip_data (list): A list of data extracted from images.
+        same_video (dict): A dictionary mapping video names to their surrounding.
+        last_search (dict): A dictionary mapping sessions to their last searched query.
+        multi_search (dict): A dictionary mapping sessions to their last searched queries for multi model.
+        min_search (dict): A dictionary mapping sessions to their last search query for min model.
+    &#34;&#34;&#34;
+
+    def __init__(self, result_path, clip_path, showing=60, has_sur=True, surrounding=7,
+                 sur_path=&#34;videos_end.txt&#34;):
+        &#34;&#34;&#34;
+        Initializes the Evaluator object.
+
+        Args:
+            result_path (str): Path to the directory where the results will be stored.
+            clip_path (str): Path to the directory where the clip data will be loaded from.
+            showing (int): The number of images to be shown in the result.
+            has_sur (bool): Whether to use surrounding of images.
+            surrounding (int): How much surrounding images to use.
+            sur_path (str): Path to the file which define ends of each video.
+        &#34;&#34;&#34;
+        self.device = &#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;
+        self.model, self.preprocess = clip.load(&#34;ViT-B/32&#34;, device=self.device)
+        self.result_path = result_path
+        self.showing = showing
+        self.sur = surrounding
+
+        self.clip_data = []
+        self.same_video = {}
+        self.last_search = {}
+        self.multi_search = {}
+        self.min_search = {}
+
+        for fn in sorted(os.listdir(clip_path)):
+            self.clip_data.append(torch.load(clip_path + f&#34;/{fn}&#34;))
+
+        if has_sur:
+            bottom = 0
+            with open(sur_path, &#39;r&#39;) as f:
+                for line in f:
+                    top = int(line[:-1]) - 1
+                    self.same_video.update(
+                        {i: np.arange(max(bottom, i - self.sur), min(top, i + self.sur)) for i in range(bottom, top)})
+                    bottom = top
+        else:
+            for i in range(len(self.clip_data)):
+                self.same_video[i] = [i]
+
+        self.logger = Logger(showing, self.same_video, self.result_path)
+
+    def evaluate_data(self, log_path, reform_count=2, with_som=False, is_sea=False):
+        &#34;&#34;&#34;
+        Evaluates the data from given log for each model define in project.
+
+        Args:
+            log_path (str): Path to the log file.
+            reform_count (int): How many times the text query can be reformulated.
+            with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            is_sea (bool): Whether the sea dataset is used.
+        &#34;&#34;&#34;
+        query_count = 0
+
+        with open(log_path) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=&#39;;&#39;)
+            line = 0
+            prev_id = -1
+            prev_session = &#34;&#34;
+            count_same = 0
+
+            for row in csv_reader:
+                if line &gt; 0:
+                    ids = int(row[1])
+                    session = row[2]
+                    if prev_id != ids or prev_session != session:
+                        query_count += 1
+                        count_same = 1
+                        self.last_search[session] = np.zeros(len(self.clip_data))
+                        self.min_search[session] = np.full(len(self.clip_data), 2)
+                        self.multi_search[session] = np.ones(len(self.clip_data))
+                    else:
+                        count_same += 1
+
+                    if count_same &lt;= reform_count:
+                        self.get_data_from_text_search(row[0], session, ids, prev_id == ids, with_som, is_sea)
+
+                    prev_id = ids
+                    prev_session = session
+                line += 1
+
+        print(&#34;Total search: &#34;, query_count)
+
+    def get_data_from_text_search(self, query, session, found, is_second, with_som, is_sea):
+        &#34;&#34;&#34;
+        Gets data for a current text search and log search for all models.
+
+        Args:
+            query (str): The text query used for search.
+            session (str): The id of current session.
+            found (int): The id of the image that was currently looking for.
+            is_second (bool): Whether this is the second text query.
+            with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            is_sea (bool): Whether the sea dataset is used.
+        &#34;&#34;&#34;
+        # get features of text query
+        with torch.no_grad():
+            text_features = self.model.encode_text(clip.tokenize([query]).to(self.device))
+        text_features /= np.linalg.norm(text_features)
+
+        # get distance of vectors
+        scores = (np.concatenate([1 - (torch.cat(self.clip_data) @ text_features.T)], axis=None))
+
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea)
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.25)
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.5)
+        self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.75)
+
+        self.last_search[session] = scores
+        self.multi_search[session] = scores
+        self.min_search[session] = scores
+
+    def log_text_search_for_all_models(self, scores, query, session, found, is_second, with_som, is_sea, limit=1.0):
+        &#34;&#34;&#34;
+        Logs the text search for all models.
+
+        Args:
+            scores (numpy.ndarray): The scores of the text search.
+            query (str): The text query used for search.
+            session (str): The id of current session.
+            found (int): The id of the image that was currently looking for.
+            is_second (bool): Whether this is the second text query.
+            with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            is_sea (bool): Whether the sea dataset is used.
+            limit (float): The percentage limit for dataset after first query.
+        &#34;&#34;&#34;
+        indexes = np.arange(len(self.clip_data))
+
+        if is_second:
+            indexes = np.argsort(self.last_search[session])[:int(len(self.clip_data) * limit)]
+            scores = scores[indexes]
+
+        self.logger.log_down(self.get_log_name(&#34;basic&#34;, with_som, is_sea, limit), list(np.argsort(scores)), indexes,
+                             query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;min&#34;, with_som, is_sea, limit),
+                             list(np.argsort(np.min(np.array([scores, self.min_search[session]]), axis=0))), indexes,
+                             query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;max&#34;, with_som, is_sea, limit),
+                             list(np.argsort(np.max(np.array([scores, self.last_search[session]]), axis=0))), indexes,
+                             query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;sum&#34;, with_som, is_sea, limit),
+                             list(np.argsort(scores + self.last_search[session])), indexes, query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;multi&#34;, with_som, is_sea, limit),
+                             list(np.argsort(scores * self.multi_search[session])), indexes, query, session, found)
+        self.logger.log_down(self.get_log_name(&#34;avg&#34;, with_som, is_sea, limit),
+                             list(np.argsort((2 * scores) + self.last_search[session])), indexes, query, session, found)
+
+    @staticmethod
+    def get_log_name(name, is_som, is_sea, limit=1.0):
+        &#34;&#34;&#34;
+        Gets the name for the log.
+
+        Args:
+            name (str): The name of the model.
+            is_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+            limit (float): The percentage limit for dataset after first query.
+            is_sea (bool): Whether the sea dataset is used.
+
+        Returns:
+            str: The name for the log.
+        &#34;&#34;&#34;
+        if is_sea:
+            name = &#34;sea_&#34; + name
+        if is_som:
+            name += &#34;_som&#34;
+        if limit &lt; 1.0:
+            name += &#34;_limit_&#34; + str(25 if limit == 0.25 else (50 if limit == 0.5 else 75))
+        return name + &#34;.csv&#34;
+
+    @staticmethod
+    def get_data_from_log(log_path):
+        &#34;&#34;&#34;
+        Method to extract data from a log file.
+
+        Args:
+            log_path (str): Path to the log file.
+
+        Returns:
+            A list containing the ranks for second query, ranks for first query, and difference values
+            extracted from the log file.
+        &#34;&#34;&#34;
+        ranks1 = []
+        ranks2 = []
+        with open(log_path) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=&#39;;&#39;)
+            line = 0
+
+            previous_row = {}
+
+            for row in csv_reader:
+                if line &gt; 0 and row[1] == previous_row[1] and row[2] == previous_row[2]:
+                    ranks1.append(int(previous_row[3]))
+                    ranks2.append(int(row[3]) if int(row[3]) &gt; 0 else 22036)
+
+                previous_row = row
+                line += 1
+
+        return [ranks2, ranks1]
+
+    def get_data_for_graph(self, input_path, first_col_name):
+        &#34;&#34;&#34;
+        Extracts data from multiple log files to be used for generating a plot.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            first_col_name (str): Name of the first column in the generated plot.
+
+        Returns:
+            A tuple containing the data and column names to be used in generating the plot.
+        &#34;&#34;&#34;
+        data = []
+        columns = [first_col_name]
+
+        x = 0
+        for fn in sorted(os.listdir(input_path)):
+            if x == 0:
+                data = [self.get_data_from_log(fn)[1]]
+            data = np.append(data, [self.get_data_from_log(fn)[0]], axis=0)
+            columns.append(fn[:-4])
+            x += 1
+
+        return zip(data, columns)
+
+    def get_violin_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a violin plot of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+
+        if use_log_scale:
+            data = [[np.log10(d) for d in row] for row in data]
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        fig, ax = plt.subplots(figsize=(16, 5))
+        sns.set()
+        sns.violinplot(data=data, bw=.02, ax=ax)
+
+        if use_log_scale:
+            ax.yaxis.set_major_formatter(ticker.StrMethodFormatter(&#34;$10^{{{x:.0f}}}$&#34;))
+            ymin, ymax = ax.get_ylim()
+            tick_range = np.arange(np.floor(ymin), ymax)
+            ax.yaxis.set_ticks(tick_range)
+            ax.yaxis.set_ticks([np.log10(x) for p in tick_range for x in np.linspace(10 ** p, 10 ** (p + 1), 10)],
+                               minor=True)
+            plt.tight_layout()
+
+        plt.savefig(output_file)
+
+    def get_points_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a points plot of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        sns.set()
+        sns.stripplot(data=data)
+        if use_log_scale:
+            plt.yscale(&#39;log&#39;)
+        plt.savefig(output_file)
+
+    def get_boxen_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a boxen plot of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        sns.set()
+        sns.boxenplot(data=data)
+        if use_log_scale:
+            plt.yscale(&#39;log&#39;)
+        plt.savefig(output_file)
+
+    def get_combine_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+        &#34;&#34;&#34;
+        Generates a combine plot (violin plot combine with swarm plot) of the data extracted from the log files.
+
+        Args:
+            input_path (str): Path to the directory containing the log files.
+            output_file (str): Path to the output file to save the plot.
+            first_col_name (str): Name of the first column in the generated plot.
+            use_log_scale (bool): If plot has log scale.
+        &#34;&#34;&#34;
+        data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+        data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+        sns.set()
+        sns.catplot(data=data, kind=&#34;violin&#34;, color=&#34;.9&#34;, inner=None, cut=0, bw=.02)
+        sns.swarmplot(data=data, size=1.5)
+        if use_log_scale:
+            plt.yscale(&#39;log&#39;)
+        plt.savefig(output_file)</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="src.evaluator.Evaluator.get_data_from_log"><code class="name flex">
+<span>def <span class="ident">get_data_from_log</span></span>(<span>log_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to extract data from a log file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>log_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the log file.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A list containing the ranks for second query, ranks for first query, and difference values
+extracted from the log file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_data_from_log(log_path):
+    &#34;&#34;&#34;
+    Method to extract data from a log file.
+
+    Args:
+        log_path (str): Path to the log file.
+
+    Returns:
+        A list containing the ranks for second query, ranks for first query, and difference values
+        extracted from the log file.
+    &#34;&#34;&#34;
+    ranks1 = []
+    ranks2 = []
+    with open(log_path) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=&#39;;&#39;)
+        line = 0
+
+        previous_row = {}
+
+        for row in csv_reader:
+            if line &gt; 0 and row[1] == previous_row[1] and row[2] == previous_row[2]:
+                ranks1.append(int(previous_row[3]))
+                ranks2.append(int(row[3]) if int(row[3]) &gt; 0 else 22036)
+
+            previous_row = row
+            line += 1
+
+    return [ranks2, ranks1]</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_log_name"><code class="name flex">
+<span>def <span class="ident">get_log_name</span></span>(<span>name, is_som, is_sea, limit=1.0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the name for the log.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the model.</dd>
+<dt><strong><code>is_som</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the Self-Organizing Map is used for generating first screen.</dd>
+<dt><strong><code>limit</code></strong> :&ensp;<code>float</code></dt>
+<dd>The percentage limit for dataset after first query.</dd>
+<dt><strong><code>is_sea</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the sea dataset is used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The name for the log.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_log_name(name, is_som, is_sea, limit=1.0):
+    &#34;&#34;&#34;
+    Gets the name for the log.
+
+    Args:
+        name (str): The name of the model.
+        is_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+        limit (float): The percentage limit for dataset after first query.
+        is_sea (bool): Whether the sea dataset is used.
+
+    Returns:
+        str: The name for the log.
+    &#34;&#34;&#34;
+    if is_sea:
+        name = &#34;sea_&#34; + name
+    if is_som:
+        name += &#34;_som&#34;
+    if limit &lt; 1.0:
+        name += &#34;_limit_&#34; + str(25 if limit == 0.25 else (50 if limit == 0.5 else 75))
+    return name + &#34;.csv&#34;</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="src.evaluator.Evaluator.evaluate_data"><code class="name flex">
+<span>def <span class="ident">evaluate_data</span></span>(<span>self, log_path, reform_count=2, with_som=False, is_sea=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Evaluates the data from given log for each model define in project.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>log_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the log file.</dd>
+<dt><strong><code>reform_count</code></strong> :&ensp;<code>int</code></dt>
+<dd>How many times the text query can be reformulated.</dd>
+<dt><strong><code>with_som</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the Self-Organizing Map is used for generating first screen.</dd>
+<dt><strong><code>is_sea</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the sea dataset is used.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def evaluate_data(self, log_path, reform_count=2, with_som=False, is_sea=False):
+    &#34;&#34;&#34;
+    Evaluates the data from given log for each model define in project.
+
+    Args:
+        log_path (str): Path to the log file.
+        reform_count (int): How many times the text query can be reformulated.
+        with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+        is_sea (bool): Whether the sea dataset is used.
+    &#34;&#34;&#34;
+    query_count = 0
+
+    with open(log_path) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=&#39;;&#39;)
+        line = 0
+        prev_id = -1
+        prev_session = &#34;&#34;
+        count_same = 0
+
+        for row in csv_reader:
+            if line &gt; 0:
+                ids = int(row[1])
+                session = row[2]
+                if prev_id != ids or prev_session != session:
+                    query_count += 1
+                    count_same = 1
+                    self.last_search[session] = np.zeros(len(self.clip_data))
+                    self.min_search[session] = np.full(len(self.clip_data), 2)
+                    self.multi_search[session] = np.ones(len(self.clip_data))
+                else:
+                    count_same += 1
+
+                if count_same &lt;= reform_count:
+                    self.get_data_from_text_search(row[0], session, ids, prev_id == ids, with_som, is_sea)
+
+                prev_id = ids
+                prev_session = session
+            line += 1
+
+    print(&#34;Total search: &#34;, query_count)</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_boxen_plot"><code class="name flex">
+<span>def <span class="ident">get_boxen_plot</span></span>(<span>self, input_path, output_file, first_col_name='1_not_found', use_log_scale=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a boxen plot of the data extracted from the log files.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory containing the log files.</dd>
+<dt><strong><code>output_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the output file to save the plot.</dd>
+<dt><strong><code>first_col_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the first column in the generated plot.</dd>
+<dt><strong><code>use_log_scale</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If plot has log scale.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_boxen_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+    &#34;&#34;&#34;
+    Generates a boxen plot of the data extracted from the log files.
+
+    Args:
+        input_path (str): Path to the directory containing the log files.
+        output_file (str): Path to the output file to save the plot.
+        first_col_name (str): Name of the first column in the generated plot.
+        use_log_scale (bool): If plot has log scale.
+    &#34;&#34;&#34;
+    data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+    data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+    sns.set()
+    sns.boxenplot(data=data)
+    if use_log_scale:
+        plt.yscale(&#39;log&#39;)
+    plt.savefig(output_file)</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_combine_plot"><code class="name flex">
+<span>def <span class="ident">get_combine_plot</span></span>(<span>self, input_path, output_file, first_col_name='1_not_found', use_log_scale=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a combine plot (violin plot combine with swarm plot) of the data extracted from the log files.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory containing the log files.</dd>
+<dt><strong><code>output_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the output file to save the plot.</dd>
+<dt><strong><code>first_col_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the first column in the generated plot.</dd>
+<dt><strong><code>use_log_scale</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If plot has log scale.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_combine_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+    &#34;&#34;&#34;
+    Generates a combine plot (violin plot combine with swarm plot) of the data extracted from the log files.
+
+    Args:
+        input_path (str): Path to the directory containing the log files.
+        output_file (str): Path to the output file to save the plot.
+        first_col_name (str): Name of the first column in the generated plot.
+        use_log_scale (bool): If plot has log scale.
+    &#34;&#34;&#34;
+    data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+    data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+    sns.set()
+    sns.catplot(data=data, kind=&#34;violin&#34;, color=&#34;.9&#34;, inner=None, cut=0, bw=.02)
+    sns.swarmplot(data=data, size=1.5)
+    if use_log_scale:
+        plt.yscale(&#39;log&#39;)
+    plt.savefig(output_file)</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_data_for_graph"><code class="name flex">
+<span>def <span class="ident">get_data_for_graph</span></span>(<span>self, input_path, first_col_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extracts data from multiple log files to be used for generating a plot.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory containing the log files.</dd>
+<dt><strong><code>first_col_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the first column in the generated plot.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A tuple containing the data and column names to be used in generating the plot.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_data_for_graph(self, input_path, first_col_name):
+    &#34;&#34;&#34;
+    Extracts data from multiple log files to be used for generating a plot.
+
+    Args:
+        input_path (str): Path to the directory containing the log files.
+        first_col_name (str): Name of the first column in the generated plot.
+
+    Returns:
+        A tuple containing the data and column names to be used in generating the plot.
+    &#34;&#34;&#34;
+    data = []
+    columns = [first_col_name]
+
+    x = 0
+    for fn in sorted(os.listdir(input_path)):
+        if x == 0:
+            data = [self.get_data_from_log(fn)[1]]
+        data = np.append(data, [self.get_data_from_log(fn)[0]], axis=0)
+        columns.append(fn[:-4])
+        x += 1
+
+    return zip(data, columns)</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_data_from_text_search"><code class="name flex">
+<span>def <span class="ident">get_data_from_text_search</span></span>(<span>self, query, session, found, is_second, with_som, is_sea)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets data for a current text search and log search for all models.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>query</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text query used for search.</dd>
+<dt><strong><code>session</code></strong> :&ensp;<code>str</code></dt>
+<dd>The id of current session.</dd>
+<dt><strong><code>found</code></strong> :&ensp;<code>int</code></dt>
+<dd>The id of the image that was currently looking for.</dd>
+<dt><strong><code>is_second</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether this is the second text query.</dd>
+<dt><strong><code>with_som</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the Self-Organizing Map is used for generating first screen.</dd>
+<dt><strong><code>is_sea</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the sea dataset is used.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_data_from_text_search(self, query, session, found, is_second, with_som, is_sea):
+    &#34;&#34;&#34;
+    Gets data for a current text search and log search for all models.
+
+    Args:
+        query (str): The text query used for search.
+        session (str): The id of current session.
+        found (int): The id of the image that was currently looking for.
+        is_second (bool): Whether this is the second text query.
+        with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+        is_sea (bool): Whether the sea dataset is used.
+    &#34;&#34;&#34;
+    # get features of text query
+    with torch.no_grad():
+        text_features = self.model.encode_text(clip.tokenize([query]).to(self.device))
+    text_features /= np.linalg.norm(text_features)
+
+    # get distance of vectors
+    scores = (np.concatenate([1 - (torch.cat(self.clip_data) @ text_features.T)], axis=None))
+
+    self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea)
+    self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.25)
+    self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.5)
+    self.log_text_search_for_all_models(scores, query, session, found, is_second, with_som, is_sea, 0.75)
+
+    self.last_search[session] = scores
+    self.multi_search[session] = scores
+    self.min_search[session] = scores</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_points_plot"><code class="name flex">
+<span>def <span class="ident">get_points_plot</span></span>(<span>self, input_path, output_file, first_col_name='1_not_found', use_log_scale=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a points plot of the data extracted from the log files.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory containing the log files.</dd>
+<dt><strong><code>output_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the output file to save the plot.</dd>
+<dt><strong><code>first_col_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the first column in the generated plot.</dd>
+<dt><strong><code>use_log_scale</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If plot has log scale.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_points_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+    &#34;&#34;&#34;
+    Generates a points plot of the data extracted from the log files.
+
+    Args:
+        input_path (str): Path to the directory containing the log files.
+        output_file (str): Path to the output file to save the plot.
+        first_col_name (str): Name of the first column in the generated plot.
+        use_log_scale (bool): If plot has log scale.
+    &#34;&#34;&#34;
+    data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+    data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+    sns.set()
+    sns.stripplot(data=data)
+    if use_log_scale:
+        plt.yscale(&#39;log&#39;)
+    plt.savefig(output_file)</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.get_violin_plot"><code class="name flex">
+<span>def <span class="ident">get_violin_plot</span></span>(<span>self, input_path, output_file, first_col_name='1_not_found', use_log_scale=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a violin plot of the data extracted from the log files.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the directory containing the log files.</dd>
+<dt><strong><code>output_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the output file to save the plot.</dd>
+<dt><strong><code>first_col_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the first column in the generated plot.</dd>
+<dt><strong><code>use_log_scale</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If plot has log scale.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_violin_plot(self, input_path, output_file, first_col_name=&#39;1_not_found&#39;, use_log_scale=True):
+    &#34;&#34;&#34;
+    Generates a violin plot of the data extracted from the log files.
+
+    Args:
+        input_path (str): Path to the directory containing the log files.
+        output_file (str): Path to the output file to save the plot.
+        first_col_name (str): Name of the first column in the generated plot.
+        use_log_scale (bool): If plot has log scale.
+    &#34;&#34;&#34;
+    data, columns_name = self.get_data_for_graph(input_path, first_col_name)
+
+    if use_log_scale:
+        data = [[np.log10(d) for d in row] for row in data]
+    data = pd.DataFrame(np.array(data).T, columns=columns_name)
+
+    fig, ax = plt.subplots(figsize=(16, 5))
+    sns.set()
+    sns.violinplot(data=data, bw=.02, ax=ax)
+
+    if use_log_scale:
+        ax.yaxis.set_major_formatter(ticker.StrMethodFormatter(&#34;$10^{{{x:.0f}}}$&#34;))
+        ymin, ymax = ax.get_ylim()
+        tick_range = np.arange(np.floor(ymin), ymax)
+        ax.yaxis.set_ticks(tick_range)
+        ax.yaxis.set_ticks([np.log10(x) for p in tick_range for x in np.linspace(10 ** p, 10 ** (p + 1), 10)],
+                           minor=True)
+        plt.tight_layout()
+
+    plt.savefig(output_file)</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Evaluator.log_text_search_for_all_models"><code class="name flex">
+<span>def <span class="ident">log_text_search_for_all_models</span></span>(<span>self, scores, query, session, found, is_second, with_som, is_sea, limit=1.0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Logs the text search for all models.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>scores</code></strong> :&ensp;<code>numpy.ndarray</code></dt>
+<dd>The scores of the text search.</dd>
+<dt><strong><code>query</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text query used for search.</dd>
+<dt><strong><code>session</code></strong> :&ensp;<code>str</code></dt>
+<dd>The id of current session.</dd>
+<dt><strong><code>found</code></strong> :&ensp;<code>int</code></dt>
+<dd>The id of the image that was currently looking for.</dd>
+<dt><strong><code>is_second</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether this is the second text query.</dd>
+<dt><strong><code>with_som</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the Self-Organizing Map is used for generating first screen.</dd>
+<dt><strong><code>is_sea</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the sea dataset is used.</dd>
+<dt><strong><code>limit</code></strong> :&ensp;<code>float</code></dt>
+<dd>The percentage limit for dataset after first query.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_text_search_for_all_models(self, scores, query, session, found, is_second, with_som, is_sea, limit=1.0):
+    &#34;&#34;&#34;
+    Logs the text search for all models.
+
+    Args:
+        scores (numpy.ndarray): The scores of the text search.
+        query (str): The text query used for search.
+        session (str): The id of current session.
+        found (int): The id of the image that was currently looking for.
+        is_second (bool): Whether this is the second text query.
+        with_som (bool): Whether the Self-Organizing Map is used for generating first screen.
+        is_sea (bool): Whether the sea dataset is used.
+        limit (float): The percentage limit for dataset after first query.
+    &#34;&#34;&#34;
+    indexes = np.arange(len(self.clip_data))
+
+    if is_second:
+        indexes = np.argsort(self.last_search[session])[:int(len(self.clip_data) * limit)]
+        scores = scores[indexes]
+
+    self.logger.log_down(self.get_log_name(&#34;basic&#34;, with_som, is_sea, limit), list(np.argsort(scores)), indexes,
+                         query, session, found)
+    self.logger.log_down(self.get_log_name(&#34;min&#34;, with_som, is_sea, limit),
+                         list(np.argsort(np.min(np.array([scores, self.min_search[session]]), axis=0))), indexes,
+                         query, session, found)
+    self.logger.log_down(self.get_log_name(&#34;max&#34;, with_som, is_sea, limit),
+                         list(np.argsort(np.max(np.array([scores, self.last_search[session]]), axis=0))), indexes,
+                         query, session, found)
+    self.logger.log_down(self.get_log_name(&#34;sum&#34;, with_som, is_sea, limit),
+                         list(np.argsort(scores + self.last_search[session])), indexes, query, session, found)
+    self.logger.log_down(self.get_log_name(&#34;multi&#34;, with_som, is_sea, limit),
+                         list(np.argsort(scores * self.multi_search[session])), indexes, query, session, found)
+    self.logger.log_down(self.get_log_name(&#34;avg&#34;, with_som, is_sea, limit),
+                         list(np.argsort((2 * scores) + self.last_search[session])), indexes, query, session, found)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="src.evaluator.Logger"><code class="flex name class">
+<span>class <span class="ident">Logger</span></span>
+<span>(</span><span>showing, same_video, result_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initializes a Logger object.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>showing</code></strong> :&ensp;<code>int</code></dt>
+<dd>The number of images to be shown in the result.</dd>
+<dt><strong><code>same_video</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary containing the indices surrounding image (surrounding in same video).</dd>
+<dt><strong><code>result_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The directory path where the log files will be saved.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Logger:
+    def __init__(self, showing, same_video, result_path):
+        &#34;&#34;&#34;
+        Initializes a Logger object.
+
+        Args:
+            showing (int): The number of images to be shown in the result.
+            same_video (dict): A dictionary containing the indices surrounding image (surrounding in same video).
+            result_path (str): The directory path where the log files will be saved.
+        &#34;&#34;&#34;
+        self.showing = showing
+        self.same_video = same_video
+        self.result_path = result_path + &#34;\\model_results\\&#34;
+        if not os.path.exists(self.result_path):
+            os.makedirs(self.result_path)
+
+    def log_down(self, log_filename, new_scores, indexes, query, session, found):
+        &#34;&#34;&#34;
+        Writes the result of a query to a log file.
+
+        Args:
+            log_filename (str): The name of the log file.
+            new_scores (list): A list of indices of images sorted by similarity to the current query.
+            indexes (list): A list of indices of all images in the dataset that are currently used.
+            query (str): The text of the query.
+            session (str): The id of the user session.
+            found (int): The index of the image that was currently looking for.
+        &#34;&#34;&#34;
+        with open(self.result_path + log_filename, &#34;a&#34;) as log:
+            # if searching image is present in context (surrounding of image) of any image in shown result same is equal 1
+            same = self.is_in_same_video(indexes[new_scores[:self.showing]], found)
+            first = self.get_rank(new_scores, np.where(indexes == found)[0][0])
+            for i in list(set(indexes).intersection(set(self.same_video[found]))):
+                first = min(first, self.get_rank(new_scores, np.where(indexes == i)[0][0]))
+
+            log.write(f&#39;&#34;{query}&#34;;{found};{session};&#39; + str(self.get_rank(new_scores, np.where(indexes == found)[0][
+                0]) if found in indexes else -1) + &#39;;{same};{first}&#39;)
+
+    def is_in_same_video(self, new_showing, target):
+        &#34;&#34;&#34;
+        Determines if the searched image and its surrounding is present in the shown result.
+
+        Args:
+            new_showing (list): A list of indices of images to be shown in the query result.
+            target (int): The index of the currently searching image.
+
+        Returns:
+            int: If the searched image is present in the context of any image in the shown result, returns 1.
+            Otherwise, returns 0.
+        &#34;&#34;&#34;
+        # if searching image is present in context (surrounding of image) of any image in shown result same is equal 1
+        return 1 if len(list(set(new_showing) &amp; set(self.same_video[target]))) &gt; 0 else 0
+
+    @staticmethod
+    def get_rank(scores, index):
+        &#34;&#34;&#34;
+        Get rank (from 1) of image.
+
+        Args:
+            scores (list): A list of indices of images sorted by similarity to the current query
+            index (int): The index of the image
+
+        Returns:
+            int: The rank of given image
+        &#34;&#34;&#34;
+        return scores.index(index) + 1</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="src.evaluator.Logger.get_rank"><code class="name flex">
+<span>def <span class="ident">get_rank</span></span>(<span>scores, index)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get rank (from 1) of image.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>scores</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of indices of images sorted by similarity to the current query</dd>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>The index of the image</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>The rank of given image</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_rank(scores, index):
+    &#34;&#34;&#34;
+    Get rank (from 1) of image.
+
+    Args:
+        scores (list): A list of indices of images sorted by similarity to the current query
+        index (int): The index of the image
+
+    Returns:
+        int: The rank of given image
+    &#34;&#34;&#34;
+    return scores.index(index) + 1</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="src.evaluator.Logger.is_in_same_video"><code class="name flex">
+<span>def <span class="ident">is_in_same_video</span></span>(<span>self, new_showing, target)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Determines if the searched image and its surrounding is present in the shown result.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>new_showing</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of indices of images to be shown in the query result.</dd>
+<dt><strong><code>target</code></strong> :&ensp;<code>int</code></dt>
+<dd>The index of the currently searching image.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>If the searched image is present in the context of any image in the shown result, returns 1.</dd>
+</dl>
+<p>Otherwise, returns 0.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_in_same_video(self, new_showing, target):
+    &#34;&#34;&#34;
+    Determines if the searched image and its surrounding is present in the shown result.
+
+    Args:
+        new_showing (list): A list of indices of images to be shown in the query result.
+        target (int): The index of the currently searching image.
+
+    Returns:
+        int: If the searched image is present in the context of any image in the shown result, returns 1.
+        Otherwise, returns 0.
+    &#34;&#34;&#34;
+    # if searching image is present in context (surrounding of image) of any image in shown result same is equal 1
+    return 1 if len(list(set(new_showing) &amp; set(self.same_video[target]))) &gt; 0 else 0</code></pre>
+</details>
+</dd>
+<dt id="src.evaluator.Logger.log_down"><code class="name flex">
+<span>def <span class="ident">log_down</span></span>(<span>self, log_filename, new_scores, indexes, query, session, found)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes the result of a query to a log file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>log_filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>The name of the log file.</dd>
+<dt><strong><code>new_scores</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of indices of images sorted by similarity to the current query.</dd>
+<dt><strong><code>indexes</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of indices of all images in the dataset that are currently used.</dd>
+<dt><strong><code>query</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text of the query.</dd>
+<dt><strong><code>session</code></strong> :&ensp;<code>str</code></dt>
+<dd>The id of the user session.</dd>
+<dt><strong><code>found</code></strong> :&ensp;<code>int</code></dt>
+<dd>The index of the image that was currently looking for.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_down(self, log_filename, new_scores, indexes, query, session, found):
+    &#34;&#34;&#34;
+    Writes the result of a query to a log file.
+
+    Args:
+        log_filename (str): The name of the log file.
+        new_scores (list): A list of indices of images sorted by similarity to the current query.
+        indexes (list): A list of indices of all images in the dataset that are currently used.
+        query (str): The text of the query.
+        session (str): The id of the user session.
+        found (int): The index of the image that was currently looking for.
+    &#34;&#34;&#34;
+    with open(self.result_path + log_filename, &#34;a&#34;) as log:
+        # if searching image is present in context (surrounding of image) of any image in shown result same is equal 1
+        same = self.is_in_same_video(indexes[new_scores[:self.showing]], found)
+        first = self.get_rank(new_scores, np.where(indexes == found)[0][0])
+        for i in list(set(indexes).intersection(set(self.same_video[found]))):
+            first = min(first, self.get_rank(new_scores, np.where(indexes == i)[0][0]))
+
+        log.write(f&#39;&#34;{query}&#34;;{found};{session};&#39; + str(self.get_rank(new_scores, np.where(indexes == found)[0][
+            0]) if found in indexes else -1) + &#39;;{same};{first}&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="src" href="index.html">src</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="src.evaluator.Evaluator" href="#src.evaluator.Evaluator">Evaluator</a></code></h4>
+<ul class="">
+<li><code><a title="src.evaluator.Evaluator.evaluate_data" href="#src.evaluator.Evaluator.evaluate_data">evaluate_data</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_boxen_plot" href="#src.evaluator.Evaluator.get_boxen_plot">get_boxen_plot</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_combine_plot" href="#src.evaluator.Evaluator.get_combine_plot">get_combine_plot</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_data_for_graph" href="#src.evaluator.Evaluator.get_data_for_graph">get_data_for_graph</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_data_from_log" href="#src.evaluator.Evaluator.get_data_from_log">get_data_from_log</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_data_from_text_search" href="#src.evaluator.Evaluator.get_data_from_text_search">get_data_from_text_search</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_log_name" href="#src.evaluator.Evaluator.get_log_name">get_log_name</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_points_plot" href="#src.evaluator.Evaluator.get_points_plot">get_points_plot</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.get_violin_plot" href="#src.evaluator.Evaluator.get_violin_plot">get_violin_plot</a></code></li>
+<li><code><a title="src.evaluator.Evaluator.log_text_search_for_all_models" href="#src.evaluator.Evaluator.log_text_search_for_all_models">log_text_search_for_all_models</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="src.evaluator.Logger" href="#src.evaluator.Logger">Logger</a></code></h4>
+<ul class="">
+<li><code><a title="src.evaluator.Logger.get_rank" href="#src.evaluator.Logger.get_rank">get_rank</a></code></li>
+<li><code><a title="src.evaluator.Logger.is_in_same_video" href="#src.evaluator.Logger.is_in_same_video">is_in_same_video</a></code></li>
+<li><code><a title="src.evaluator.Logger.log_down" href="#src.evaluator.Logger.log_down">log_down</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

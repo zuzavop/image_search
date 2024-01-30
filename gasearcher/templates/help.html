@@ -1,0 +1,52 @@
+{% load i18n %}
+<h2>{% trans "Help" %}</h2>
+<p>{% blocktrans %}In this study, the goal is to obtain data that should allow observing whether classes associated with
+    images help users with their search. For this reason,
+    <strong>it is important to use classes when reformulating the query</strong>{% endblocktrans %}.
+</p>
+
+<h3>{% trans "Steps of the study" %}</h3>
+<p>{% blocktrans %}Your task is to <strong>find the image</strong> that will be displayed in the lower left corner,
+    using a maximum of two text queries. The classes (phrases displayed under the pictures) in which the individual
+    pictures have been classified should help you in this task.{% endblocktrans %}.</p>
+<ol>
+    <li>{% trans "Look at the image you are currently looking for (in the lower left corner)" %}.</li>
+    <li>{% blocktrans %}Formulate a text query (in English) describing the image you are looking for into the text field
+        in the upper left corner{% endblocktrans %}.
+    </li>
+    <li>{% blocktrans %}Use the <strong>Enter</strong> keyboard or the <strong>Text search</strong> button to submit a
+        query{% endblocktrans %}.
+    </li>
+    <li>{% trans "Look carefully at the search result" %}
+        <ul>
+            <li>{% blocktrans %}If you find the image you are currently looking for, send it using <strong>ctrl</strong>
+                + <strong>click</strong> on the image.{% endblocktrans %}.
+            </li>
+            <li>{% trans "Otherwise" %}
+                <ol>
+                    <li>{% trans "Rephrase the query using using image classes or your own words" %}
+                        <ol>
+                            <li>{% blocktrans %}Try to find an image that is very similar to the image you are currently
+                                looking for (ideally containing the same looking object){% endblocktrans %}.
+                            </li>
+                            <li>{% blocktrans %}Choose one of the image classes (phrases below the image) and click on
+                                it to add it to the text query{% endblocktrans %}.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>{% blocktrans %}Submit the reformulated query as in step{% endblocktrans %} 3.</li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+</ol>
+<p>{% blocktrans %}If you can't find the picture you're currently looking for or don't want to search for it anymore,
+    you can press the <strong>Next</strong> button and skip the image that was searcher for{% endblocktrans %}. </p>
+<p>{% blocktrans %}If you want to enlarge the image and see it in the context of the video from which it is taken,
+    <strong>double-click</strong> on the given image. However, images are not allowed to be sent when viewed in the
+    context of a video (due to the currently tested method){% endblocktrans %}.</p>
+<p>{% blocktrans %}Each image is assigned 10 classes (phrases), which are sorted by relevance (the class that best
+    describes the image is in 1st place) under each image (press the + button to view them all). The colors (from red to
+    green) of the classes correspond to the uniqueness of the class in the dataset. For searching, it is better to use
+    <strong>green color classes</strong>, as these classes are not very much represented in the dataset and therefore
+    have a greater chance of helping with the search{% endblocktrans %}.</p>
