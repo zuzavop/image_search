@@ -117,7 +117,7 @@ class Searcher:
         scores1 = self.result_score(text_features1.T)
         scores2 = self.result_score(text_features2.T)
 
-        scores = [a + (max(scores2[i + 1:i + 4]) if i < len(scores2) - 1 else 2) for i, a in enumerate(scores1)]
+        scores = [a * (min(scores2[i + 1:i + 4]) if i < len(scores2) - 1 else 2) for i, a in enumerate(scores1)]
         self.last_scores[session] = scores[:self.showing]
         scores = list(np.argsort(scores))
 
@@ -159,17 +159,20 @@ class Searcher:
         Bayes update using selected image.
 
         Args:
-            like_image (int): The index of the selected image.
+            like_image (str): The index of the selected image.
             session (str): The unique session ID of the user. (used for logging)
 
         Returns:
             list: A list of indices representing the top results after bayes update.
         """
         # get features of image query
-        positive_image = int(like_image)
+        positive_image = int(like_image.split("_")[0])
+        positive_image2 = like_image.split("_")[1] if len(like_image.split("_")) > 1 else ""
         dataset = [self.clip_data[i] for i in self.last_sent[session]]
         negative_examples = [self.clip_data[i] for i in self.last_sent[session] if i != positive_image]
         positive_examples = [self.clip_data[positive_image]]
+        if positive_image2 != "":
+            positive_examples.append(self.clip_data[int(positive_image2)])
 
         negative = {str(i): np.concatenate([1 - (torch.cat(negative_examples) @ item.T)], axis=None) for
                     i, item in enumerate(dataset)}

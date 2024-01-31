@@ -1,9 +1,14 @@
 const mainWindow = {
     /**
      * @type {string}
-     * @description index of currently selected
+     * @description first index of currently selected
      */
-    selectedId: "-1",
+    selectedId1: "-1",
+    /**
+     * @type {string}
+     * @description second index of currently selected
+     */
+    selectedId2: "-1",
     /**
      * @type {number}
      * @description index of middle image in context
@@ -74,7 +79,7 @@ const mainWindow = {
      */
     simSearch: function () {
         // send query for similarity search
-        if (mainWindow.selectedId !== "-1") {
+        if (mainWindow.selectedId1 !== "-1") {
             if (mainWindow.trying === config.att) {
                 utils.setCookies(mainWindow.found + 1, 0, "", "");
                 location.href = '?s';
@@ -85,7 +90,7 @@ const mainWindow = {
                     }
                 }
                 utils.setCookies(mainWindow.found, mainWindow.trying + 1, "");
-                location.href = '?sim_id=' + mainWindow.selectedId.split("_")[0];
+                location.href = '?sim_id=' + mainWindow.selectedId1.split("_")[0];
             }
         } else {
             alert(text.similarity_warning);
@@ -134,8 +139,8 @@ const mainWindow = {
      */
     select: function (id, newContext = true) {
         // select image and show it context
-        if (mainWindow.selectedId !== "-1") {
-            document.getElementById(mainWindow.selectedId.toString()).setAttribute("class", "unselected");
+        if (mainWindow.selectedId2 !== "-1") {
+            document.getElementById(mainWindow.selectedId2.toString()).setAttribute("class", "unselected");
         }
 
         // in context
@@ -143,7 +148,7 @@ const mainWindow = {
             return;
         }
 
-        if (newContext && mainWindow.selectedId === id) {
+        if (newContext && mainWindow.selectedId1 === id) {
             let parent = document.querySelector(".modal-parent");
             if (parent) {
                 parent.style.display = "block";
@@ -156,7 +161,8 @@ const mainWindow = {
             mainWindow.showContext(parseInt(id.split("_")[0]));
         }
 
-        mainWindow.selectedId = id;
+        mainWindow.selectedId2 = mainWindow.selectedId1;
+        mainWindow.selectedId1 = id;
         document.getElementById(id).setAttribute("class", "selected");
     },
 
@@ -237,8 +243,8 @@ const mainWindow = {
     /**
      * send query for bayes update
      */
-    bayes : function () {
-        if (mainWindow.selectedId !== "-1") {
+    bayes: function () {
+        if (mainWindow.selectedId1 !== "-1") {
             if (mainWindow.trying === config.att) {
                 utils.setCookies(mainWindow.found + 1, 0, "", "");
                 location.href = '?s';
@@ -249,7 +255,11 @@ const mainWindow = {
                     }
                 }
                 utils.setCookies(mainWindow.found, mainWindow.trying + 1, "");
-                location.href = '?b_id=' + mainWindow.selectedId.split("_")[0];
+                if (mainWindow.selectedId2 !== "-1") {
+                    location.href = '?b_id=' + mainWindow.selectedId1.split("_")[0] + "_" + mainWindow.selectedId2.split("_")[0];
+                } else {
+                    location.href = '?b_id=' + mainWindow.selectedId1.split("_")[0];
+                }
             }
         } else {
             alert(text.similarity_warning);
